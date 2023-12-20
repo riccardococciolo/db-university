@@ -21,3 +21,10 @@ WHERE DATE(date) = '2020-06-20' AND HOUR(hour) >= 14;
 SELECT * 
 FROM `degrees` 
 WHERE level = "magistrale"
+
+SELECT COUNT(*) AS num_departments
+FROM `departments`
+
+SELECT COUNT(*) AS num_teachers_without_phone
+FROM `teachers`
+WHERE phone IS NULL
