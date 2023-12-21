@@ -16,3 +16,30 @@ FROM course_teacher
 JOIN courses
 ON course_teacher.course_id = courses.id
 WHERE course_teacher.teacher_id = 44
+
+SELECT * 
+FROM students
+JOIN degrees
+ON students.degree_id = degrees.id
+JOIN departments
+on departments.id = degrees.department_id
+ORDER BY `students`.`surname`
+
+SELECT *
+FROM courses
+JOIN course_teacher
+ON course_teacher.course_id = courses.id
+JOIN teachers
+ON course_teacher.teacher_id = teachers.id
+
+SELECT DISTINCT `teachers`.`id`, `teachers`.`name`, `teachers`.`surname`, `teachers`.`phone`
+FROM departments
+JOIN degrees
+ON departments.id = degrees.department_id
+JOIN courses
+ON courses.degree_id = degrees.id
+JOIN course_teacher
+ON course_teacher.course_id = courses.id
+JOIN teachers
+ON teachers.id = course_teacher.teacher_id
+WHERE departments.name = "Dipartimento di Matematica"
